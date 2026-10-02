@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Demo Project</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- GitHub-like font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap"
+        rel="stylesheet"
+    >
+</head>
+
+<body>
+
+    <!-- Animated background -->
+    <div class="background">
+        <div class="grid"></div>
+        <div class="glow glow-one"></div>
+        <div class="glow glow-two"></div>
+        <div id="particles"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-left">
+            <div class="github-logo">◉</div>
+            <span>demo-project</span>
+        </div>
+
+        <div class="nav-status">
+            <span class="status-dot"></span>
+            Project planning
+        </div>
+    </nav>
+
+    <!-- Main -->
+    <main>
+
+        <section class="hero">
+
+            <div class="badge">
+                <span>⌘</span>
+                COLLABORATION REQUEST
+            </div>
+
+            <h1>
+                When should we<br>
+                <span>build the demo?</span>
+            </h1>
+
+            <p class="subtitle">
+                Pick a date and let's turn the idea into something real.
+            </p>
+
+            <!-- Terminal decoration -->
+            <div class="terminal">
+                <div class="terminal-header">
+                    <div class="terminal-buttons">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+
+                    <span class="terminal-title">
+                        demo-project.sh
+                    </span>
+                </div>
+
+                <div class="terminal-body">
+                    <div>
+                        <span class="terminal-prompt">$</span>
+                        git checkout -b
+                        <span class="terminal-highlight">
+                            demo-project
+                        </span>
+                    </div>
+
+                    <div>
+                        <span class="terminal-prompt">$</span>
+                        echo
+                        <span class="terminal-highlight">
+                            "Let's build something!"
+                        </span>
+                    </div>
+
+                    <div class="cursor-line">
+                        <span class="terminal-prompt">$</span>
+                        <span class="cursor"></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Form -->
+            <form
+                id="demoForm"
+                action="https://formspree.io/f/xdekrbya"
+                method="POST"
+            >
+
+                <div class="form-card">
+
+                    <div class="form-title">
+                        <span class="step">01</span>
+                        <div>
+                            <h2>First, who are you?</h2>
+                            <p>Tell us your name.</p>
+                        </div>
+                    </div>
+
+                    <label for="name">Your name</label>
+
+                    <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        placeholder="e.g. Alex"
+                        required
+                        autocomplete="name"
+                    >
+
+                    <div class="form-title second">
+                        <span class="step">02</span>
+                        <div>
+                            <h2>When should we demo?</h2>
+                            <p>Choose a date that works for you.</p>
+                        </div>
+                    </div>
+
+                    <label for="demoDate">Demo date</label>
+
+                    <input
+                        type="date"
+                        id="demoDate"
+                        name="demo_date"
+                        required
+                    >
+
+                    <!-- Optional message -->
+                    <label for="message">Anything else? <span>(optional)</span></label>
+
+                    <textarea
+                        id="message"
+                        name="message"
+                        placeholder="Anything you'd like to mention..."
+                        rows="3"
+                    ></textarea>
+
+                    <!-- Email subject -->
+                    <input
+                        type="hidden"
+                        name="_subject"
+                        value="New Demo Project Date Request"
+                    >
+
+                    <button type="submit" id="submitButton">
+                        <span>Schedule the demo</span>
+                        <span class="arrow">→</span>
+                    </button>
+
+                    <p class="privacy">
+                        Your response will be sent to the project organizer.
+                    </p>
+
+                </div>
+
+            </form>
+
+            <!-- Success message -->
+            <div id="successMessage" class="success-message">
+
+                <div class="success-icon">✓</div>
+
+                <h2>You're on the calendar!</h2>
+
+                <p id="successText"></p>
+
+                <button id="resetButton">
+                    Choose another date
+                </button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <span>Built with</span>
+        <span class="heart">♥</span>
+        <span>and a little bit of code</span>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
